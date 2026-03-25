@@ -7,9 +7,13 @@ public class Vehiculo {
     private String placa;
     private String color;
     private int tipoComustible;  //1. Gasolina, 2. Diesel
+    private Duenio duenio;
+
+
 
     public Vehiculo(String modelo, String marca, double cilindraje,
-                    double torque, String placa, String color, int tipoCombustible){
+                    double torque, String placa, String color, int tipoCombustible,
+                    String nombreDuenio, int cedulaDuenio, String telefonoDuenio){
         this.modelo = modelo;
         this.marca = marca;
         this.modelo = modelo;
@@ -18,6 +22,7 @@ public class Vehiculo {
         this.placa = placa;
         this.color = color;
         this.tipoComustible = tipoCombustible;
+        this.duenio = new Duenio(nombreDuenio,cedulaDuenio,telefonoDuenio);
     }
 
     double aceleracion(){
@@ -36,5 +41,9 @@ public class Vehiculo {
         System.out.println("Modelo: "+modelo);
         System.out.println("Marca: "+marca);
         System.out.println("Color: "+color);
+    }
+
+    void informacionDuenio(){
+        this.duenio.informacion();
     }
 }
