@@ -16,13 +16,29 @@ public class Vehiculo {
                     String nombreDuenio, int cedulaDuenio, String telefonoDuenio){
         this.modelo = modelo;
         this.marca = marca;
-        this.modelo = modelo;
         this.cilindraje = cilindraje;
         this.torque = torque;
         this.placa = placa;
         this.color = color;
         this.tipoComustible = tipoCombustible;
         this.duenio = new Duenio(nombreDuenio,cedulaDuenio,telefonoDuenio);
+    }
+
+    public Vehiculo(String modelo, String marca, double cilindraje,
+                    double torque, String placa, String color, int tipoCombustible,
+                    Duenio duenio){
+        this.modelo = modelo;
+        this.marca = marca;
+        this.cilindraje = cilindraje;
+        this.torque = torque;
+        this.placa = placa;
+        this.color = color;
+        this.tipoComustible = tipoCombustible;
+        this.duenio = duenio;
+    }
+
+    public Vehiculo(){
+
     }
 
     double aceleracion(){
@@ -35,15 +51,69 @@ public class Vehiculo {
         return ac;
     }
 
-    void informacion(){
-        System.out.println("Información Vehículo");
-        System.out.println("Placa: "+placa);
-        System.out.println("Modelo: "+modelo);
-        System.out.println("Marca: "+marca);
-        System.out.println("Color: "+color);
+
+
+     public String getModelo() {
+        return modelo;
     }
 
-    void informacionDuenio(){
-        this.duenio.informacion();
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public double getCilindraje() {
+        return cilindraje;
+    }
+
+    public void setCilindraje(double cilindraje) {
+        this.cilindraje = cilindraje;
+    }
+
+    public double getTorque() {
+        return torque;
+    }
+
+    public void setTorque(double torque) {
+        this.torque = torque;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa) {
+        this.placa = placa;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public int getTipoComustible() {
+        return tipoComustible;
+    }
+
+    public void setTipoComustible(int tipoComustible) {
+        this.tipoComustible = tipoComustible;
+    }
+
+    public Duenio getDuenio() {
+        return duenio;
+    }
+
+    public void setDuenio(Duenio duenio) {
+        this.duenio = duenio;
     }
 }

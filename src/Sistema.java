@@ -1,0 +1,65 @@
+import java.util.Scanner;
+
+public class Sistema {
+    private Scanner sc;
+
+    public Sistema(){
+        sc = new Scanner(System.in);
+    }
+
+    void imprimirInformacionVehiculo(Vehiculo vehiculo){
+        System.out.println("Información Vehículo");
+        System.out.println("Placa: "+vehiculo.getPlaca());
+        System.out.println("Modelo: "+vehiculo.getModelo());
+        System.out.println("Marca: "+vehiculo.getMarca());
+        System.out.println("Color: "+vehiculo.getColor());
+        this.imprimirInformacionDuenio(vehiculo.getDuenio());
+    }
+
+    void imprimirInformacionDuenio(Duenio duenio){
+        System.out.println("Información Dueño:");
+        System.out.println("Nombre: " + duenio.getNombre());
+        System.out.println("Cedula: " + duenio.getCedula());
+        System.out.println("Telefono: " + duenio.getTelefono());
+    }
+
+    public Vehiculo crearVehiculo(){
+        System.out.println("Ingrese los datos del vehículo:");
+        System.out.print("Modelo: ");
+        String modelo = sc.next();
+        System.out.print("Marca: ");
+        String marca = sc.next();
+        System.out.print("Cilindraje: ");
+        double cilindraje = sc.nextDouble();
+        System.out.print("Torque: ");
+        double torque = sc.nextDouble();
+        System.out.print("Placa: ");
+        String placa = sc.next();
+        System.out.print("Color: ");
+        String color = sc.next();
+        System.out.print("Tipo combustible 1.Gasolina/2.Diesel: ");
+        int tipoComustible = sc.nextInt();
+        Duenio duenio = this.crearDuenio();
+        Vehiculo vi = new Vehiculo(modelo,marca,cilindraje,torque,
+                                    placa,color,tipoComustible,duenio);
+        return vi;
+    }
+
+    public Duenio crearDuenio(){
+        System.out.println("Ingrese los datos del dueño:");
+        System.out.print("Nombre: ");
+        String nombre = sc.next();
+        System.out.print("Cedula ");
+        int cedula = sc.nextInt();
+        System.out.print("Teléfono: ");
+        String telefono = sc.next();
+        Duenio du = new Duenio(nombre,cedula,telefono);
+        return du;
+    }
+
+    public void imprimirAceleracionVehiculo(Vehiculo vehiculo){
+        double acv = vehiculo.aceleracion();
+        System.out.println("La aceleracion de V2 es: "+acv);
+    }
+
+}
