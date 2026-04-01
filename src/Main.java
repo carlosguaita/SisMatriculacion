@@ -9,6 +9,11 @@ public class Main {
         sis.imprimirInformacionVehiculo(v1);
         sis.imprimirAceleracionVehiculo(v1);
 
+        sis.actualizarVehiculo(v1);
+        System.out.println("----------------Vehículo Actualizado-----------------");
+        sis.imprimirInformacionVehiculo(v1);
+
+
         Vehiculo v2 = sis.crearVehiculo();
         sis.imprimirInformacionVehiculo(v2);
         sis.imprimirAceleracionVehiculo(v2);

@@ -62,4 +62,21 @@ public class Sistema {
         System.out.println("La aceleracion de V2 es: "+acv);
     }
 
+    public void actualizarVehiculo(Vehiculo vehiculo){
+        System.out.println("Actualizar Información del Vehículo");
+        System.out.println("Placa (" + vehiculo.getPlaca() + "): ");
+        String placa = sc.next();
+        vehiculo.setPlaca(placa);
+        System.out.println("Modelo (" + vehiculo.getModelo() + "): ");
+        String modelo = sc.next();
+        vehiculo.setModelo(modelo);
+        System.out.println("Marca (" + vehiculo.getMarca() + "): ");
+        String marca = sc.next();
+        vehiculo.setMarca(marca);
+        System.out.println("Color (" + vehiculo.getColor() + "): ");
+        String color = sc.next();
+        vehiculo.setColor(color);
+    }
+
+
 }
