@@ -53,7 +53,16 @@ public class Sistema {
         int cedula = sc.nextInt();
         System.out.print("Teléfono: ");
         String telefono = sc.next();
+        System.out.println("Fecha nacimiento ");
+        System.out.print("Año: ");
+        int anio = sc.nextInt();
+        System.out.print("Mes: ");
+        int mes = sc.nextInt();
+        System.out.print("Día: ");
+        int dia = sc.nextInt();
         Duenio du = new Duenio(nombre,cedula,telefono);
+        du.setEdad(anio,mes,dia);
+        //Duenio du = new Duenio(nombre,cedula,telefono,anio,mes,dia);
         return du;
     }
 
@@ -76,6 +85,12 @@ public class Sistema {
         System.out.println("Color (" + vehiculo.getColor() + "): ");
         String color = sc.next();
         vehiculo.setColor(color);
+    }
+
+    public void imprirEdadDuenio(Vehiculo vehiculo){
+        System.out.println("La edad del dueño del vehiculo de placas: " +
+                            vehiculo.getPlaca() +
+                            " es:" + vehiculo.getDuenio().calcularEdad());
     }
 
 

@@ -51,6 +51,31 @@ public class Vehiculo {
         return ac;
     }
 
+    double aceleracion(int tipoComustible, float torque, float cilindraje){
+        double ac;
+        if (tipoComustible == 1){
+            ac = torque * cilindraje * 3;
+        }else{
+            ac = torque * cilindraje;
+        }
+        return ac;
+    }
+
+    double aceleracion(Vehiculo vehiculo){
+        double ac;
+        if (vehiculo.tipoComustible == 1){
+            ac = Math.pow(vehiculo.torque,2);
+        }else{
+            ac = Math.sqrt(vehiculo.torque);
+        }
+        return ac;
+    }
+
+    @Override
+    public String toString(){
+        return "El vehículo tiene las placas: " + this.placa;
+    }
+
 
 
      public String getModelo() {

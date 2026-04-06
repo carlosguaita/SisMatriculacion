@@ -6,8 +6,11 @@ public class Main {
         Sistema sis = new Sistema();
 
         Vehiculo v1 = sis.crearVehiculo();
-        sis.imprimirInformacionVehiculo(v1);
-        sis.imprimirAceleracionVehiculo(v1);
+        //sis.imprimirInformacionVehiculo(v1);
+        //sis.imprimirAceleracionVehiculo(v1);
+        //sis.imprirEdadDuenio(v1);
+
+        System.out.println(v1);
 
         sis.actualizarVehiculo(v1);
         System.out.println("----------------Vehículo Actualizado-----------------");
