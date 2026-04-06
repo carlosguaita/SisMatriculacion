@@ -7,6 +7,19 @@ public class Sistema {
         sc = new Scanner(System.in);
     }
 
+    public static int menu(){
+        int opc;
+        System.out.println("Seleccione una opción:");
+        System.out.println("1.Crear vehículo");
+        System.out.println("2.Actualizar vehículo");
+        System.out.println("3.Imprimir informacion");
+        System.out.print(">> ");
+        opc = sc.nextInt();
+        return opc;
+    }
+
+
+
     void imprimirInformacionVehiculo(Vehiculo vehiculo){
         System.out.println("Información Vehículo");
         System.out.println("Placa: "+vehiculo.getPlaca());
