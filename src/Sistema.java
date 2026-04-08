@@ -1,18 +1,25 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class Sistema {
     private Scanner sc;
+    private BufferedReader br;
 
     public Sistema(){
         sc = new Scanner(System.in);
+        br = new BufferedReader(new InputStreamReader(System.in));
     }
 
     public static int menu(){
+        Scanner sc = new Scanner(System.in);
         int opc;
         System.out.println("Seleccione una opción:");
         System.out.println("1.Crear vehículo");
         System.out.println("2.Actualizar vehículo");
-        System.out.println("3.Imprimir informacion");
+        System.out.println("3.Imprimir información");
+        System.out.println("4.Imprimir aceleración");
         System.out.print(">> ");
         opc = sc.nextInt();
         return opc;
@@ -61,7 +68,12 @@ public class Sistema {
     public Duenio crearDuenio(){
         System.out.println("Ingrese los datos del dueño:");
         System.out.print("Nombre: ");
-        String nombre = sc.next();
+        String nombre = null;
+        try {
+            nombre = br.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         System.out.print("Cedula ");
         int cedula = sc.nextInt();
         System.out.print("Teléfono: ");

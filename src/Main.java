@@ -4,22 +4,23 @@ public class Main {
     public static void main(String[] args) {
 
         Sistema sis = new Sistema();
+        Vehiculo v1 = new Vehiculo();
+        int opc = Sistema.menu();
 
-        Vehiculo v1 = sis.crearVehiculo();
-        //sis.imprimirInformacionVehiculo(v1);
-        //sis.imprimirAceleracionVehiculo(v1);
-        //sis.imprirEdadDuenio(v1);
-
-        System.out.println(v1);
-
-        sis.actualizarVehiculo(v1);
-        System.out.println("----------------Vehículo Actualizado-----------------");
-        sis.imprimirInformacionVehiculo(v1);
-
-
-        Vehiculo v2 = sis.crearVehiculo();
-        sis.imprimirInformacionVehiculo(v2);
-        sis.imprimirAceleracionVehiculo(v2);
+        switch (opc){
+            case 1:
+                v1 = sis.crearVehiculo();
+                break;
+            case 2:
+                sis.actualizarVehiculo(v1);
+                break;
+            case 3:
+                sis.imprimirInformacionVehiculo(v1);
+                break;
+            case 4:
+                sis.imprimirAceleracionVehiculo(v1);
+                break;
+        }
 
     }
 }
