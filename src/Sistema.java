@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 import java.util.Scanner;
 
 public class Sistema {
@@ -25,6 +26,29 @@ public class Sistema {
         return opc;
     }
 
+    public int seleccionarVehiculo(Vehiculo[] vehiculos, int cont){
+        int indice = 0;
+        System.out.println("Seleccione un vehículo: ");
+        for (int i = 0; i < cont; i++){
+            System.out.println(i + ". " + vehiculos[i].getPlaca());
+        }
+        System.out.println(">> ");
+        indice = sc.nextInt();
+        return indice;
+    }
+
+    public int seleccionarVehiculo(List<Vehiculo> listaVehiculos){
+        int indice = 0;
+        int i = 0;
+        System.out.println("Seleccione un vehículo: ");
+        for (Vehiculo vehiculo : listaVehiculos){
+            System.out.println(i + ". " + vehiculo.getPlaca());
+            i++;
+        }
+        System.out.println(">> ");
+        indice = sc.nextInt();
+        return indice;
+    }
 
 
     void imprimirInformacionVehiculo(Vehiculo vehiculo){
